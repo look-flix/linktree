@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Looks de Filmes & Séries</title>
+<style>
+/* Container centralizado e responsivo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff0f5;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background-color: #fff; /* fundo branco dentro da borda */
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 { color: #e06f8b; margin-bottom: 10px; }
+.bio { color: #555; margin-bottom: 30px; }
+
+.menu, .submenu, .subsubmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px auto;
+}
+
+.menu li {
+  background-color: #e06f8b;
+  color: #fff;
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu li:hover { background-color: #d05570; }
+
+.submenu, .subsubmenu { display: none; }
+
+.submenu li, .subsubmenu li {
+  background-color: #f4c2d1;
+  color: #333;
+  padding: 10px;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submenu li:hover, .subsubmenu li:hover { background-color: #e6a0b8; }
+
+a { color: inherit; text-decoration: none; display: block; }
+
+/* Mobile first */
+@media (max-width: 450px) {
+  .container { padding: 15px; }
+  .menu li, .submenu li, .subsubmenu li { font-size: 16px; padding: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Looks de Filmes & Séries</h1>
+<p class="bio">Clique na série, depois na personagem para ver os looks</p>
+
+<ul class="menu">
+  <!-- Meninas Malvadas -->
+  <li onclick="toggleSubmenu('malvadas')">🎀 Meninas Malvadas
+    <ul class="submenu" id="malvadas">
+      <li onclick="toggleSubsubmenu(event, 'regina')">Regina
+        <ul class="subsubmenu" id="regina">
+          <li><a href="#">Look 1</a></li>
+          <li><a href="#">Look 2</a></li>
+        </ul>
+      </li>
+      <li onclick="toggleSubsubmenu(event, 'cady')">Cady
+        <ul class="subsubmenu" id="cady">
+          <li><a href="#">Look 1</a></li>
+          <li><a href="#">Look 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <!-- Gossip Girl -->
+  <li onclick="toggleSubmenu('gossip')">👗 Gossip Girl
+    <ul class="submenu" id="gossip">
+      <li onclick="toggleSubsubmenu(event, 'serena')">Serena
+        <ul class="subsubmenu" id="serena">
+          <li><a href="#">Look 1</a></li>
+          <li><a href="#">Look 2</a></li>
+        </ul>
+      </li>
+      <li onclick="toggleSubsubmenu(event, 'blair')">Blair
+        <ul class="subsubmenu" id="blair">
+          <li><a href="#">Look 1</a></li>
+          <li><a href="#">Look 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <!-- One Piece -->
+  <li onclick="toggleSubmenu('onepiece')">🌊 One Piece
+    <ul class="submenu" id="onepiece">
+      <li onclick="toggleSubsubmenu(event, 'nami')">Nami
+        <ul class="subsubmenu" id="nami">
+          <li><a href="#">Look 1</a></li>
+          <li><a href="#">Look 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <!-- Patricinhas de Beverly Hills -->
+  <li onclick="toggleSubmenu('beverly')">💖 Patricinhas de Beverly Hills
+    <ul class="submenu" id="beverly">
+      <li onclick="toggleSubsubmenu(event, 'cher')">Cher
+        <ul class="subsubmenu" id="cher">
+          <li><a href="#">Look 1</a></li>
+          <li><a href="#">Look 2</a></li>
+        </ul>
+      </li>
+      <li onclick="toggleSubsubmenu(event, 'dionne')">Dionne
+        <ul class="subsubmenu" id="dionne">
+          <li><a href="#">Look 1</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+</ul>
+</div>
+
+<script>
+function toggleSubmenu(id) {
+  const menu = document.getElementById(id);
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function toggleSubsubmenu(event, id) {
+  event.stopPropagation(); // impede de fechar o submenu principal
+  const menu = document.getElementById(id);
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
