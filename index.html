@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Looks de Filmes & Séries</title>
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -23,10 +24,10 @@ body {
   text-align: center;
 }
 
-h1 { color: #A61C3C; margin-bottom: 10px; }
+h1 { color: #A61C3C; }
 .bio { color: #555; margin-bottom: 30px; }
 
-ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+ul { list-style: none; padding: 0; margin: 0; }
 
 .menu li, .submenu li, .subsubmenu li, .subsubsubmenu li {
   background-color: #A61C3C;
@@ -35,7 +36,6 @@ ul { list-style: none; padding: 0; margin: 0; text-align: left; }
   margin: 5px 0;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .menu li:hover { background-color: #d05570; }
@@ -45,137 +45,128 @@ ul { list-style: none; padding: 0; margin: 0; text-align: left; }
 .submenu li, .subsubmenu li, .subsubsubmenu li {
   background-color: #e06f8b;
   color: #333;
-  padding: 10px;
-  margin: 4px 0;
-  border-radius: 6px;
 }
-
-.submenu li:hover, .subsubmenu li:hover, .subsubsubmenu li:hover { background-color: #e6a0b8; }
 
 .subsubsubmenu li { background-color: #fad1df; }
-.subsubsubmenu li:hover { background-color: #f2a7c0; }
 
 a { color: inherit; text-decoration: none; display: block; }
-
-@media (max-width: 450px) {
-  .container { padding: 15px; }
-  .menu li, .submenu li, .subsubmenu li, .subsubsubmenu li { font-size: 16px; padding: 12px; }
-}
 </style>
 </head>
+
 <body>
 
 <div class="container">
 <h1>Looks de Filmes & Séries</h1>
-<p class="bio">Clique na série, depois na personagem, depois no look para ver as peças</p>
+<p class="bio">Clique na série, depois na personagem, depois no look</p>
 
 <ul class="menu">
-  <!-- Meninas Malvadas -->
-  <li onclick="toggleSubmenu('malvadas')">🎀 Meninas Malvadas
-    <ul class="submenu" id="malvadas">
-      <li onclick="toggleSubsubmenu(event, 'regina')">Regina
-        <ul class="subsubmenu" id="regina">
-          <li onclick="toggleSubsubmenu(event, 'reginaLookIcônico')">Look Icônico
-            <ul class="subsubsubmenu" id="reginaLookIcônico">
-              <li><a href="https://s.shopee.com.br/1BHomSBpaf" target="_blank">Regata a little bit dramatic</a></li>
-              <li><a href="https://s.shopee.com.br/1gE7IbJsfZ" target="_blank">Saia Couro</a></li>
-              <li><a href="https://s.shopee.com.br/30jUtqHLzG" target="_blank">Bolsa estampada</a></li>
-              <li><a href="https://s.shopee.com.br/60N6Suq66a" target="_blank">Pantufa de pelinhos rosa</a></li>
-              <li><a href="https://s.shopee.com.br/7fVKSfWzMv" target="_blank">Casaquinho rosa</a></li>
 
-            </ul>
-          </li>
-          <li onclick="toggleSubsubmenu(event, 'reginaPijama')">Pijama
-            <ul class="subsubsubmenu" id="reginaPijama">
-              <li><a href="https://s.shopee.com.br/9fGQgdE1Jd" target="_blank">Conjunto pijama patty</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li onclick="toggleSubsubmenu(event, 'cady')">Cady
-        <ul class="subsubmenu" id="cady">
-          <li onclick="toggleSubsubmenu(event, 'cadyLookCadyAntes')">Look Cady Antes
-            <ul class="subsubsubmenu" id="cadyLookCadyAntes">
-              <li><a href="ttps://s.shopee.com.br/gLY6lnqV8" target="_blank">Jaqueta Verde Militar</a></li>
-              <li><a href="https://s.shopee.com.br/60N8Gq7FyW" target="_blank">Blusa vermelha</a></li>
-              <li><a href="https://s.shopee.com.br/BPLLGrZzs" target="_blank">Mochila Verde Vintage</a></li>
+<!-- MENINAS MALVADAS -->
+<li onclick="toggle('malvadas')">🎀 Meninas Malvadas
+  <ul class="submenu" id="malvadas">
 
-             </ul>
-            <ul class="subsubmenu" id="cady">
-          <li onclick="toggleSubsubmenu(event, 'cadyLookCadyAntes')">Regata e saia de bolinha
-            <ul class="subsubsubmenu" id="cadyLookCadyAntes">
-              <li><a href="https://s.shopee.com.br/AUpXgWWtdo" target="_blank">Regata rosa</a></li>
-              <li><a href="https://s.shopee.com.br/8ARcvN4A6r" target="_blank">Saia bolinha</a></li>
+    <!-- REGINA -->
+    <li onclick="toggle(event,'regina')">Regina
+      <ul class="subsubmenu" id="regina">
 
-             </ul>
-          </li>
-          <li onclick="toggleSubsubmenu(event, 'gretchen')">Gretchen
-  <ul class="subsubmenu" id="gretchen">
-    <li onclick="toggleSubsubmenu(event, 'gretchenLook1')">Look 1
-      <ul class="subsubsubmenu" id="gretchenLook1">
-        <li><a href="#">Blusa Rosa</a></li>
-        <li><a href="#">Saia Preta</a></li>
+        <li onclick="toggle(event,'reginaIconico')">Look Icônico
+          <ul class="subsubsubmenu" id="reginaIconico">
+            <li><a href="https://s.shopee.com.br/1BHomSBpaf" target="_blank">Regata</a></li>
+            <li><a href="https://s.shopee.com.br/1gE7IbJsfZ" target="_blank">Saia Couro</a></li>
+            <li><a href="https://s.shopee.com.br/30jUtqHLzG" target="_blank">Bolsa</a></li>
+          </ul>
+        </li>
+
+        <li onclick="toggle(event,'reginaPijama')">Pijama
+          <ul class="subsubsubmenu" id="reginaPijama">
+            <li><a href="https://s.shopee.com.br/9fGQgdE1Jd" target="_blank">Pijama</a></li>
+          </ul>
+        </li>
+
       </ul>
     </li>
-  </ul>
-</li>
-          <li onclick="toggleSubsubmenu(event, 'karen')">Karen
-  <ul class="subsubmenu" id="karen">
-    <li onclick="toggleSubsubmenu(event, 'karenLook1')">Look 1
-      <ul class="subsubsubmenu" id="karenLook1">
-        <li><a href="https://s.shopee.com.br/1qXbap4E3t" target="_blank">Regata Preta</a></li>
-        <li><a href="http://bit.ly/4sxibhx" target="_blank">Saia de Corações</a></li>
+
+    <!-- CADY -->
+    <li onclick="toggle(event,'cady')">Cady
+      <ul class="subsubmenu" id="cady">
+
+        <li onclick="toggle(event,'cadyAntes')">Look Antes
+          <ul class="subsubsubmenu" id="cadyAntes">
+            <li><a href="https://s.shopee.com.br/gLY6lnqV8" target="_blank">Jaqueta Verde</a></li>
+            <li><a href="https://s.shopee.com.br/60N8Gq7FyW" target="_blank">Blusa Vermelha</a></li>
+          </ul>
+        </li>
+
+        <li onclick="toggle(event,'cadyBolinha')">Regata + Saia de bolinha
+          <ul class="subsubsubmenu" id="cadyBolinha">
+            <li><a href="https://s.shopee.com.br/AUpXgWWtdo" target="_blank">Regata rosa</a></li>
+            <li><a href="https://s.shopee.com.br/8ARcvN4A6r" target="_blank">Saia bolinha</a></li>
+          </ul>
+        </li>
+
       </ul>
     </li>
+
+    <!-- GRETCHEN -->
+    <li onclick="toggle(event,'gretchen')">Gretchen
+      <ul class="subsubmenu" id="gretchen">
+        <li onclick="toggle(event,'gretchenLook1')">Look 1
+          <ul class="subsubsubmenu" id="gretchenLook1">
+            <li><a href="#">Blusa Rosa</a></li>
+            <li><a href="#">Saia Preta</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <!-- KAREN -->
+    <li onclick="toggle(event,'karen')">Karen
+      <ul class="subsubmenu" id="karen">
+        <li onclick="toggle(event,'karenLook1')">Look 1
+          <ul class="subsubsubmenu" id="karenLook1">
+            <li><a href="https://s.shopee.com.br/1qXbap4E3t" target="_blank">Regata Preta</a></li>
+            <li><a href="http://bit.ly/4sxibhx" target="_blank">Saia Corações</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
   </ul>
 </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
 
-  <ul class="menu">
-  <!-- One Piece -->
-  <li onclick="toggleSubmenu('onepiece')">🌊 One Piece
-    <ul class="submenu" id="onepiece">
-      <li onclick="toggleSubsubmenu(event, 'nami')">Nami
-        <ul class="subsubmenu" id="nami">
-          <li onclick="toggleSubsubmenu(event, 'namiLook1')">Look 1
-            <ul class="subsubsubmenu" id="namiLook1">
-              <li><a href="https://s.shopee.com.br/8KkzbERfmO" target="_blank">Blusa dupla rosa</a></li>
-              <li><a href="https://s.shopee.com.br/8phGCLlJwL" target="_blank">Saia Mostarda</a></li>
+<!-- ONE PIECE -->
+<li onclick="toggle('onepiece')">🌊 One Piece
+  <ul class="submenu" id="onepiece">
 
-              </ul>
-          </li>
-               <li onclick="toggleSubsubmenu(event, 'namivestidoxadrezamarelo')"Vestido Xadrez Amarelo"
-            <ul class="subsubsubmenu" id="namivestidoxadrezamarelo">
-              <li><a href="https://s.shopee.com.br/1LbFIkpfHL" target="_blank">Vestido Xadrez Amarelo</a></li>
-               </li>
-        </ul>
-                <li onclick="toggleSubsubmenu(event, 'namilookblusaazulebranca')"Loook Blusa Azul e Branca"
-            <ul class="subsubsubmenu" id="namilookblusaazulebranca">
-              <li><a href="https://s.shopee.com.br/6KzvJjltyu" target="_blank">Blusa azul e branca</a></li>
-              <li><a href="https://s.shopee.com.br/15rmMysng" target="_blank">Saia Mostarda</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+    <li onclick="toggle(event,'nami')">Nami
+      <ul class="subsubmenu" id="nami">
+
+        <li onclick="toggle(event,'nami1')">Look 1
+          <ul class="subsubsubmenu" id="nami1">
+            <li><a href="https://s.shopee.com.br/8KkzbERfmO" target="_blank">Blusa</a></li>
+          </ul>
+        </li>
+
+        <li onclick="toggle(event,'nami2')">Vestido Xadrez
+          <ul class="subsubsubmenu" id="nami2">
+            <li><a href="https://s.shopee.com.br/1LbFIkpfHL" target="_blank">Vestido</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+  </ul>
+</li>
 
 </ul>
 </div>
 
 <script>
-function toggleSubmenu(id) {
-  const menu = document.getElementById(id);
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-function toggleSubsubmenu(event, id) {
-  event.stopPropagation();
-  const menu = document.getElementById(id);
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+function toggle(e, id) {
+  if (id) e.stopPropagation();
+  const el = document.getElementById(id || e);
+  el.style.display = el.style.display === "block" ? "none" : "block";
 }
 </script>
 
